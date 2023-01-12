@@ -34,6 +34,7 @@ function startCountdown() {
     if (diff < 1) {
         endCountdown();
     }
+    formatTimeStr()
 }
 
 // Démarrage du compte à rebours
@@ -48,3 +49,13 @@ function endCountdown() {
     jsConfetti.addConfetti()
     clearInterval(intervall)
 }
+
+// Bonus
+
+function formatTimeStr() {
+    document.querySelector('#days').lastChild.textContent = daysElem.textContent < 2 ? "Jour" : "Jours";
+    document.querySelector('#hours').lastChild.textContent = hoursElem.textContent < 2 ? "Heure" : "Heures";
+    document.querySelector('#minutes').lastChild.textContent = minutesElem.textContent < 2 ? "Minute" : "Minutes";
+    document.querySelector('#seconds').lastChild.textContent = secondsElem.textContent < 2 ? "Seconde" : "Secondes";
+}
+
